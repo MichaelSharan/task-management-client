@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { AuthService } from './services/auth.service';
-import { Router } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  imports: [NgIf],
+  imports: [NgIf, RouterOutlet],
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
