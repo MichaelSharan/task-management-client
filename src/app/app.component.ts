@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { AuthService } from './services/auth.service';
-import { Router, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { NgIf } from '@angular/common';
 import { Role } from './models/auth.model';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  imports: [NgIf, RouterOutlet],
+  imports: [NgIf, RouterOutlet, RouterLink],
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
@@ -28,5 +28,9 @@ export class AppComponent {
   logout(): void {
     this.authService.logout();
     this.router.navigate(['/login']);
+  }
+
+  log(message: string){
+    console.log(message)
   }
 }

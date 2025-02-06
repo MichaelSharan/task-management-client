@@ -3,8 +3,8 @@
     <button *ngIf="isAuthenticated()" (click)="logout()" class="btn btn-danger">
       Выход
     </button>
-    <div class="crumb"><a routerLink="/create-test">Добавить тест</a></div>
-    <div class="crumb" *ngIf="isAdmin"><a routerLink="/test-results">Список тестов</a></div>
+    <div class="crumb"><a [routerLink]="'/create-test'">Добавить тест</a></div>
+    <div class="crumb" *ngIf="isAdmin"><a [routerLink]="'/test-results'">Список тестов</a></div>
   </div>
 </nav>
 
