@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { TestResult } from '../../models/test.result.model';
 import { ApiService } from '../../services/api.service';
 import { NgIf } from '@angular/common';
@@ -8,7 +8,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-edit-test',
   standalone: true,
-  imports: [NgIf, FormsModule],
+  imports: [NgIf, FormsModule, RouterLink],
   templateUrl: './edit-test.component.html',
   styleUrls: ['./edit-test.component.css']
 })
