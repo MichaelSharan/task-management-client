@@ -1,2 +1,8 @@
 <button *ngIf="isAuthenticated()" (click)="logout()" class="btn btn-danger">Выход</button>
+<nav class="crumbs">
+    <div class="list">
+      <div class="crumb"><a href="/create-test">Добавить тест</a></div>
+      <div class="crumb"><a href="list">Список тестов</a></div>
+    </div>
+  </nav>
 <router-outlet></router-outlet>

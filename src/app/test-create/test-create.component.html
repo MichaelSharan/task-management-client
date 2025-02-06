@@ -1,0 +1,18 @@
+<h1>Создание теста</h1>
+
+<form [formGroup]="testForm" (ngSubmit)="submitForm()">
+  <div class="form-group">
+    <label for="input">Введите строку с числом</label>
+    <input id="input" type="text" class="form-control" formControlName="input" placeholder="Введите число">
+    <div *ngIf="testForm.controls['input'].invalid && testForm.controls['input'].touched" class="text-danger">
+      <span *ngIf="testForm.controls['input'].errors?.['required']">Поле обязательно.</span>
+      <span *ngIf="testForm.controls['input'].errors?.['pattern']">Введите только цифры.</span>
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary" [disabled]="testForm.invalid">Создать</button>
+
+  <p *ngIf="errorMessage" class="text-danger">{{ errorMessage }}</p>
+</form>
+
+<a routerLink="/tests">К списку</a>
