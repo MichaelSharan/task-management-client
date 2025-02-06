@@ -29,4 +29,8 @@ export class TestResultsComponent {
       }
     );
   }
+
+  delete(id: string){
+    this.apiService.deleteTest(id).subscribe(() => this.loadTestResults())
+  }
 }

@@ -21,4 +21,8 @@ export class ApiService {
       error: err => 'Ошибка при создании теста: ' + (err.error?.message || err.statusText)
     });
   }
+
+  deleteTest(id: string){
+    return this.http.delete(`${this.apiUrl}/${id}`)
+  }
 }

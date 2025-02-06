@@ -19,9 +19,7 @@
       <td>{{ test.input }}</td>
       <td>{{ test.output }}</td>
       <td>
-        <a [routerLink]="['/edit-test', test.id]" class="btn btn-warning btn-sm">Редактировать</a>
-        <a [routerLink]="['/test-details', test.id]" class="btn btn-info btn-sm">Детали</a>
-        <a [routerLink]="['/delete-test', test.id]" class="btn btn-danger btn-sm">Удалить</a>
+        <button (click)="delete(test.id)" class="btn btn-danger btn-sm cursor-pointer">Удалить</button>
       </td>
     </tr>
   </tbody>
