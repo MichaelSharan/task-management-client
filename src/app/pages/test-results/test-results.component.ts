@@ -3,6 +3,7 @@ import { TestResult } from '../../models/test.result.model';
 import { ApiService } from '../../services/api.service';
 import { RouterLink } from '@angular/router';
 import { NgFor } from '@angular/common';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-test-results',
@@ -13,7 +14,11 @@ import { NgFor } from '@angular/common';
 export class TestResultsComponent {
   testResults: TestResult[] = [];
 
-  constructor(private apiService: ApiService) {}
+  constructor(private apiService: ApiService, private authService: AuthService) {}
+
+  get userIsAdmin(){
+    return this.authService.userIsAdmin()
+  }
 
   ngOnInit(): void {
     this.loadTestResults();

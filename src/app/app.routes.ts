@@ -6,11 +6,13 @@ import { TestResultsComponent } from './pages/test-results/test-results.componen
 import { authGuard } from './guards/auth.guard';
 import { TestCreateComponent } from './test-create/test-create.component';
 import { adminGuard } from './guards/admin.guard';
+import { EditTestComponent } from './pages/edit-test/edit-test.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent, canActivate: [authGuard] },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'test-results', component: TestResultsComponent, canActivate: [authGuard, adminGuard] },
-    { path: 'create-test', component: TestCreateComponent, canActivate: [authGuard] }
+    { path: 'create-test', component: TestCreateComponent, canActivate: [authGuard] },
+    { path: 'edit-test/:id', component: EditTestComponent },
   ];

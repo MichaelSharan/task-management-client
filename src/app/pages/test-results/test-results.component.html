@@ -19,7 +19,12 @@
       <td>{{ test.input }}</td>
       <td>{{ test.output }}</td>
       <td>
-        <button (click)="delete(test.id)" class="btn btn-danger btn-sm cursor-pointer">Удалить</button>
+        @if (userIsAdmin) {
+            <a [routerLink]="['/edit-test', test.id]" class="btn btn-warning btn-sm">Редактировать</a>
+            <button (click)="delete(test.id)" class="btn btn-danger btn-sm cursor-pointer">Удалить</button> 
+        } @else {
+            Нет доступных действий
+        }
       </td>
     </tr>
   </tbody>

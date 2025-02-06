@@ -26,4 +26,8 @@ export class AuthService {
   isAuthenticated(): boolean {
     return !!localStorage.getItem('token');
   }
+
+  userIsAdmin(){
+    return localStorage.getItem('userRole') === 'Admin'
+  }
 }
