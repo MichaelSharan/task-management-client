@@ -18,6 +18,7 @@ export class LoginComponent {
     this.authService.login(this.credentials).subscribe({
       next: (response) => {
         localStorage.setItem('token', response.token);
+        localStorage.setItem('userRole', response.roles[0])
         console.log('Вход успешен!');
         this.router.navigate(['/']);
       },

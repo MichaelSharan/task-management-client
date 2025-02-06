@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { UserInfo } from '../models/auth.model';
 
 @Injectable({
   providedIn: 'root'
@@ -14,12 +14,13 @@ export class AuthService {
     return this.http.post(`${this.apiUrl}/register`, user);
   }
 
-  login(credentials: any): Observable<{token: string}>{
-    return this.http.post<{token: string}>(`${this.apiUrl}/login`, credentials);
+  login(credentials: any){
+    return this.http.post<UserInfo>(`${this.apiUrl}/login`, credentials);
   }
 
   logout(): void {
     localStorage.removeItem('token');
+    localStorage.removeItem('userRole')
   }
 
   isAuthenticated(): boolean {

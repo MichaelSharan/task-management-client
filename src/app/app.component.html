@@ -2,7 +2,9 @@
 <nav class="crumbs">
     <div class="list">
       <div class="crumb"><a href="/create-test">Добавить тест</a></div>
-      <div class="crumb"><a href="test-results">Список тестов</a></div>
+      @if (isAdmin) {
+        <div class="crumb"><a href="test-results">Список тестов</a></div>
+      }
     </div>
   </nav>
 <router-outlet></router-outlet>
