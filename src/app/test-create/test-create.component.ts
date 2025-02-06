@@ -15,6 +15,7 @@ import { ApiService } from '../services/api.service';
 export class TestCreateComponent {
   testForm: FormGroup;
   errorMessage: string = '';
+  result?: string;
 
   constructor(private fb: FormBuilder, private http: HttpClient, private router: Router, private apiService: ApiService) {
     this.testForm = this.fb.group({
@@ -29,6 +30,9 @@ export class TestCreateComponent {
 
     const testData = { input: this.testForm.value.input };
 
-    this.apiService.makeTestResult(testData.input)
+    this.apiService.makeTestResult(testData.input).subscribe({
+      next: (res) => this.result = res.output,
+      error: err => 'Ошибка при создании теста: ' + (err.error?.message || err.statusText)
+    });
   }
 }

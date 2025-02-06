@@ -16,10 +16,7 @@ export class ApiService {
   }
 
   makeTestResult(number: number){
-    this.http.post(this.apiUrl, {input: number}).subscribe({
-      next: () => this.router.navigate(['/tests']),
-      error: err => 'Ошибка при создании теста: ' + (err.error?.message || err.statusText)
-    });
+    return this.http.post<TestResult>(this.apiUrl, {input: number})
   }
 
   deleteTest(id: string){
