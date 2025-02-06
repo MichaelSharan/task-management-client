@@ -1,0 +1,101 @@
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #343a40;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .table th,
+  .table td {
+    padding: 12px 15px;
+    text-align: left;
+  }
+  
+  .table thead {
+    background: #007bff;
+    color: white;
+  }
+  
+  .table tbody tr:nth-child(even) {
+    background: #f8f9fa;
+  }
+  
+  .table tbody tr:hover {
+    background: #d8e2f3;
+    transition: background 0.3s;
+  }
+  
+  /* Стили для кнопок */
+  .btn {
+    text-decoration: none;
+    padding: 6px 12px;
+    margin-right: 5px;
+    border-radius: 5px;
+    font-size: 14px;
+    display: inline-block;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  .btn-primary {
+    background: #007bff;
+    color: white;
+    border: none;
+  }
+  
+  .btn-primary:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  .btn-warning {
+    background: #ffc107;
+    color: black;
+    border: none;
+  }
+  
+  .btn-warning:hover {
+    background: #e0a800;
+    transform: scale(1.05);
+  }
+  
+  .btn-info {
+    background: #17a2b8;
+    color: white;
+    border: none;
+  }
+  
+  .btn-info:hover {
+    background: #117a8b;
+    transform: scale(1.05);
+  }
+  
+  .btn-danger {
+    background: #dc3545;
+    color: white;
+    border: none;
+  }
+  
+  .btn-danger:hover {
+    background: #c82333;
+    transform: scale(1.05);
+  }
+  
+  /* Контейнер для кнопки */
+  .create-button-container {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .create-button-container a {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
