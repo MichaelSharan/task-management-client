@@ -1,10 +1,11 @@
-<button *ngIf="isAuthenticated()" (click)="logout()" class="btn btn-danger">Выход</button>
 <nav class="crumbs">
-    <div class="list">
-      <div class="crumb"><a href="/create-test">Добавить тест</a></div>
-      @if (isAdmin) {
-        <div class="crumb"><a href="test-results">Список тестов</a></div>
-      }
-    </div>
-  </nav>
+  <div class="list">
+    <button *ngIf="isAuthenticated()" (click)="logout()" class="btn btn-danger">
+      Выход
+    </button>
+    <div class="crumb"><a routerLink="/create-test">Добавить тест</a></div>
+    <div class="crumb" *ngIf="isAdmin"><a routerLink="/test-results">Список тестов</a></div>
+  </div>
+</nav>
+
 <router-outlet></router-outlet>
